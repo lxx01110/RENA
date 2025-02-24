@@ -9,7 +9,7 @@ You may use conda to install the environment. Please run the following script.
 ```
 conda  create  -n RENA
 conda activate RENA
-pip install -r requirements.txt
+bash requirements.sh
 ```
 
 
