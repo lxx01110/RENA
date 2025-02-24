@@ -7,7 +7,7 @@ Structures and Absent Attributes". The codes are built on [GraphMAE]( https://gi
 You may use conda to install the environment. Please run the following script. 
 
 ```
-conda  create  -n RENA
+conda  create  -n RENA python=3.9
 conda activate RENA
 bash requirements.sh
 ```
