@@ -132,11 +132,9 @@ def load_dataset(dataset_name,threshold,ptb_type,seed,r,T,p,ptb_rate):
         src, dst=graph.edges()
         edge_index = torch.from_numpy(np.stack((src, dst), axis=0))
         edge_index = ptb_adj(edge_index,0.3,ptb_type,features.size(0))
-        #adj_matrix = torch.load(f'/storage/lixx/data/adj_learning_albation_2/tfinanceadd_pos_ration_0.2_neg_times_{r}_ramdom_times_2_{seed}.pt', map_location='cpu')
-        #adj_matrix = torch.load(f'/storage/lixx/data/adj_learning_albation/tfinanceadd_pos_ration_{pos_ratio}_neg_times_2_random_times_3__{seed}.pt', map_location='cpu')
-    #import pdb;pdb.set_trace()
-    adj_matrix = torch.load(f'/storage/lixx/data/rena/{dataset_name}/add_p_{p}_r_{r}_T_{T}_{seed}.pt', map_location='cpu')
-    #adj_matrix = torch.load(f'/storage/lixx/data/adj_learning_albation/{dataset_name}add_pos_ration_{pos_ratio}_neg_times_{neg_times}_random_times_{random_times}_{seed}.pt', map_location='cpu')
+       
+    adj_matrix = torch.load(f'data/rena/{dataset_name}/add_p_{p}_r_{r}_T_{T}_{seed}.pt', map_location='cpu')
+  
     graph,num_classes  =get_optimized_graph(adj_matrix,edge_index,threshold,features.size(0),label)
      
     if dataset_name == 'amazon':
